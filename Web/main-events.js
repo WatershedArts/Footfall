@@ -208,7 +208,6 @@ function updateTotals(data)
 	totalChart.datasets[0].points[totalDataLength].value = data[data.length-1].total;
 	if (totalDataLength-1 > labelLength) {
 		var label = totalChart.datasets[0].points[totalDataLength].label;
-		console.log("Updating events for new point "+label);
 		var eventCount = 0;
 		for (var title in events) {
 			eventAtCurrentLabel = null;
@@ -300,7 +299,6 @@ $(document).ready(function(){
 	interval = $('#interval').val();
 	$('#interval').change(function(){
 		interval = $('#interval').val();
-		//preLoadData();
 		trafficChart.destroy();
 		totalChart.destroy();
 		createTrafficChart();

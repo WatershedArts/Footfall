@@ -11,7 +11,6 @@ repobase="https://github.com";
 repos="orgicus/ofxCvPiCam  \
 kylemcdonald/ofxCv   \
 arturoc/ofxHttpUtils  \
-nnnick/Chart.js   \
 ";
 
 echo "------------------------------";
