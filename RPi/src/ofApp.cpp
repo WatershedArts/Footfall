@@ -36,6 +36,17 @@ void ofApp::loadConfig()
         _lightenAmount = XML.getValue("CONFIG:LIGHTENAMOUNT",35);
         _contrast = XML.getValue("CONFIG:CONTRAST",0);
         _brightness = XML.getValue("CONFIG:BRIGHTNESS",0);
+        XML.pushTag("CONFIG:MASKPOINTS");
+        XML.pushTag("MASKPOINTS:POINT");
+        int nbPoints = XML.getNumTags("POINT");
+        for (int i = 0; i < nbPoints; i++) {
+            int x, y;
+            x = XML.getAttribute("POINT", "x", 0, i);
+            y = XML.getAttribute("POINT", "y", 0, i);
+            _maskPoints.push_back(cv::Point(x, y));
+        }
+        XML.popTag();
+        XML.popTag();
         cout << "Loaded Settings" << endl;
     }
     else {
@@ -46,19 +57,13 @@ void ofApp::loadConfig()
 //--------------------------------------------------------------
 void ofApp::makeMask()
 {
-    vector <cv::Point> maskright;
-    maskright.push_back(cv::Point(95,0));
-    maskright.push_back(cv::Point(123,211));
-    maskright.push_back(cv::Point(228,220));
-    maskright.push_back(cv::Point(270,0));
-    
     mask = cvCreateMat(240, 320, CV_8UC1);
     for(int i=0; i<mask.cols; i++)
         for(int j=0; j<mask.rows; j++)
             mask.at<uchar>(cv::Point(i,j)) = 0;
     
     vector<cv::Point> polyright;
-    approxPolyDP(maskright, polyright, 1.0, true);
+    approxPolyDP(_maskPoints, polyright, 1.0, true);
     
     fillConvexPoly(mask,&polyright[0],polyright.size(),255,8,0);
 }
@@ -73,8 +78,8 @@ void ofApp::setup()
     countInLatch = false;
     countOutLatch = false;
     
-    makeMask();
     loadConfig();
+    makeMask();
     
     startLine = ofPoint(0,_cameraHeight/2);
     endLine = ofPoint(_cameraWidth,_cameraHeight/2);

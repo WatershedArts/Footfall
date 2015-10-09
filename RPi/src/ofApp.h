@@ -14,7 +14,6 @@
 #include "ofxCvPiCam.h"
 #include "ofxXmlSettings.h"
 
-using namespace wng;
 using namespace ofxCv;
 using namespace cv;
 
@@ -83,6 +82,7 @@ public:
     int _lightenAmount;
     int _contrast;
     int _brightness;
+    vector <cv::Point> _maskPoints;
     
     string _locationID;
     string _secretKey;
