@@ -4,7 +4,7 @@
 
 Footfall is a camera based people counting system that uses a  Raspberry Pi and Pi Cam. There is more information about the system on our [blog](http://blogs.wcode.org/2015/04/footfall-a-camera-based-people-counting-system-for-under-60/).
 
-The source code provides a barebones system that will require some customisation. 
+The source code provides a barebones system that will require some customisation.
 
 **Disclaimer**:
 The original software was intended for sole use within Watershed, therefore some of the source code has been altered for public use and differs slightly to our systems. For example our system generated event tags showing screening in conjunction with the total number of people in Watershed, to do this we had to pre-populate some timestamps and may cause an issue if the system is ran past a certain time.
@@ -21,14 +21,31 @@ You will also need to update your Pi
 
 `sudo raspi-update`
 
-Create a new app in openFrameworks, then copy the source code across.
+Assuming you have [built and compiled oF](http://forum.openframeworks.cc/t/raspberry-pi-2-setup-guide/18690).
 
-**Make sure you add the required addons to the addons.make file**
+Create a new app your openFrameworks apps/myApps directory then copy the source code across, including the addons.make file.
 
-Then build the app using the make command.
+To build the app.
+
+* ```cd projectFolder```
+* ```make```
+
+If you are using a mouse and keyboard.
+You can either launch the app by
+* ```make run```
+or
+* bin/projectName
+
+However, if you are sshing into the pi.
+Launch the app like so.
+
+* ```DISPLAY=:0 make run & disown```
+or
+* ```DISPLAY=:0 bin/projectName & disown```
+This puts the app in the background.
 
 ###How to Customise
-Inside the bin/data folder of the RPi App there is a config.xml file. This contains all of the relevant variables you will need to change. 
+Inside the bin/data folder of the RPi App there is a config.xml file. This contains all of the relevant variables you will need to change.
 
 Inside the <UPLOADURL> tag put your upload.php url this will fire the events into the database.
 The other settings will need tweaking depending on where you place the tracker.
