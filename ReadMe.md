@@ -13,6 +13,20 @@ The original software was intended for sole use within Watershed, therefore some
 You will need a few extra packages to build the RPi application.
 Copy the getrepos.sh file and place it inside the addons folder of your openFrameworks folder. Run the script by navigating to the addons folder and entering the following command into Terminal `./getrepos.sh`. This will pull down the require packages.
 
+
+##FIX: ofxCvPiCam
+A couple of people have run into compiler errors with the [ofxCVPiCam](https://github.com/orgicus/ofxCvPiCam/) library on RPi2. 
+
+It looks like the MMAL Libraries may have changed slightly so are causing strange errors.
+
+You can resolve these by following [this guide] (https://github.com/orgicus/ofxCvPiCam/issues/3).
+
+```
+cd ~/openFrameworks/addons/ofxCvPiCam/
+mv libs old-libs
+```
+----
+
 You will also need to update your Pi
 
 `sudo apt-get update`
