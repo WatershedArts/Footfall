@@ -20,9 +20,9 @@ if (isset($_POST['submit'])) {
 		require_once('includes/secret.php');
 
 		// Get Values
-		$location = mysql_real_escape_string($_POST['location']);
-		$count = mysql_real_escape_string($_POST['count']);
-		$rawtimestamp = mysql_real_escape_string($_POST['rawtimestamp']);
+		$location = $_POST['location'];
+		$count = $_POST['count'];
+		$rawtimestamp = $_POST['rawtimestamp'];
 
 		// Prepare INSERT QUERY
 		$sqlq = "INSERT INTO `data` (`timestamp`,`locationID`,`event`) VALUES (:rawtimestamp,:location,:count)";
