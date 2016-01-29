@@ -1,0 +1,6 @@
+ofxCvPiCam
+ofxJSON
+ofxHttpUtils
+ofxOpenCv
+ofxCv
+ofxNetwork
