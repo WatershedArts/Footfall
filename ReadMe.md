@@ -13,7 +13,10 @@ The original software was intended for sole use within Watershed, therefore some
 You will need a few extra packages to build the RPi application.
 Copy the getrepos.sh file and place it inside the addons folder of your openFrameworks folder. Run the script by navigating to the addons folder and entering the following command into Terminal `./getrepos.sh`. This will pull down the require packages.
 
-There are two versions of Footfall, one for armv6l and one for armv7l.
+There are three versions of Footfall.
+
+* 1 x Armv6l for Raspberry Pi 1 running Wheezy
+* 2 x Armv7l for Raspberry Pi 2 running Jessie
 
 Move the Application directory from the Repo into openFrameworks/apps/myApps/
 
@@ -92,6 +95,8 @@ Inside the bin/data folder of the RPi App there is a config.xml file. This conta
 
 Inside the <UPLOADURL> tag put your upload.php url this will fire the events into the database.
 The other settings will need tweaking depending on where you place the tracker.
+
+The ThreadedFootfall example uses JSON for its config.
 
 ###Thanks
 Thanks to Kyle McDonald for [ofxCv](http://github.com/kylemcdonald/ofxCv) and George Profenza for [ofxCvPiCam] (https://github.com/orgicus/ofxCvPiCam).

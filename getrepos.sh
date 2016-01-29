@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #  getrepos.sh
-#  
+#
 #
 #  Created by David Haylock on 21/04/2015.
 #
@@ -10,7 +10,8 @@
 repobase="https://github.com";
 repos="orgicus/ofxCvPiCam  \
 kylemcdonald/ofxCv   \
-arturoc/ofxHttpUtils  \
+arturoc/ofxHttpUtils \
+jefftimesten/ofxJSON  \
 ";
 
 echo "------------------------------";
