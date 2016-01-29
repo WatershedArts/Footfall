@@ -13,6 +13,35 @@ The original software was intended for sole use within Watershed, therefore some
 You will need a few extra packages to build the RPi application.
 Copy the getrepos.sh file and place it inside the addons folder of your openFrameworks folder. Run the script by navigating to the addons folder and entering the following command into Terminal `./getrepos.sh`. This will pull down the require packages.
 
+There are two versions of Footfall, one for armv6l and one for armv7l.
+
+Move the Application directory from the Repo into openFrameworks/apps/myApps/
+
+and run 
+
+`make clean`
+
+Then ensure you have pulled the latest versions of the Addons using the script above.
+
+For armv7l you will need to ensure your pi is up to date and that the camera enabled in raspi-config.
+
+Please run the following.
+
+`sudo apt-get update`
+
+`sudo apt-get upgrade`
+
+`sudo raspi-update`
+
+`sudo raspi-config`
+
+Enable Camera
+
+and Reboot.
+
+Test the camera is working. 
+
+```raspistill -o testimage.jpg```
 
 ##FIX: ofxCvPiCam
 A couple of people have run into compiler errors with the [ofxCVPiCam](https://github.com/orgicus/ofxCvPiCam/) library on RPi2. 
