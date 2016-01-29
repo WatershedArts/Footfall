@@ -16,7 +16,8 @@ Copy the getrepos.sh file and place it inside the addons folder of your openFram
 There are three versions of Footfall.
 
 * 1 x Armv6l for Raspberry Pi 1 running Wheezy
-* 2 x Armv7l for Raspberry Pi 2 running Jessie
+* 1 x Armv7l for Raspberry Pi 2 running Jessie
+* 1 x Armv7l for Raspberry Pi 2 running Jessie using Threading (1)
 
 Move the Application directory from the Repo into openFrameworks/apps/myApps/
 
@@ -89,6 +90,11 @@ Launch the app like so.
 or
 * ```DISPLAY=:0 bin/projectName & disown```
 This puts the app in the background.
+
+###ToDo
+
+* Fix mask generator (1)
+* Complete variable transfer
 
 ###How to Customise
 Inside the bin/data folder of the RPi App there is a config.xml file. This contains all of the relevant variables you will need to change.
