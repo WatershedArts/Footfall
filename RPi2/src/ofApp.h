@@ -17,6 +17,8 @@
 using namespace ofxCv;
 using namespace cv;
 
+#define USE_CAMERA
+
 //--------------------------------------------------------------
 class myLine {
 public:
@@ -43,7 +45,11 @@ public:
     void makeMask();
     void newResponse(ofxHttpResponse & response);
     
+#ifdef USE_CAMERA
     ofxCvPiCam cam;
+#else
+    ofVideoPlayer videoPlayer;
+#endif
     ofxCv::ContourFinder contourFinder;
     ofxCv::RectTrackerFollower<Blob> tracker;
     cv::BackgroundSubtractorMOG2* pMOG2;

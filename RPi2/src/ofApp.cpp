@@ -94,11 +94,16 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::setupCV()
 {
+    
+#ifdef USE_CAMERA
     cam.setup(_cameraWidth, _cameraHeight, false);
     cam.setFlips(false, true);
     cam.setContrast(_contrast);
     cam.setBrightness(_brightness);
-    
+#else 
+    videoPlayer.load("A Video File.mov");
+    videoPlayer.play();
+#endif
     pMOG2 = new BackgroundSubtractorMOG2(_history,_MOGThreshold,false);
     
     contourFinder.setMinAreaRadius(_minArea);
@@ -134,7 +139,12 @@ void ofApp::update()
         actions.pop_back();
     }
     
+#ifdef USE_CAMERA
     frame = cam.grab();
+#else
+    frame = toCv(videoPlayer);
+#endif
+    
     
     if(!frame.empty())
     {
