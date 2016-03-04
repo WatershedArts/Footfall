@@ -76,6 +76,7 @@ elseif (isset($_GET['get'])){
 	}
 	$rows = array();
 	$runningtotal = 0;
+	$runningtotalin = 0;
 	$rowCount = 0;
 	$totalin = 0;
 	while ($row = $get->fetch(PDO::FETCH_ASSOC)) {
