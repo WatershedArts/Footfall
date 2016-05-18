@@ -4,7 +4,7 @@
 // * Creation Date: 20-11-2014
 // * Copyright: (c) 2015 by Watershed Arts Trust Ltd.
 
-var hostUrl = "http://localhost/upload.php";
+var hostUrl = "./upload.php";
 var trafficData;
 var totalsData;
 var trafficChart;
