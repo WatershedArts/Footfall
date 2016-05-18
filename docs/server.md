@@ -52,31 +52,32 @@ You'll need to restart the Apache server to launch phpmyadmin.
 
 First lets add it to the apache config.
 
-````sudo nano /etc/apache2/apache2.conf````
+``sudo nano /etc/apache2/apache2.conf`
 
 Somewhere near the bottom add the following line.
 
-````Include /etc/phpmyadmin/apache.conf````
+`Include /etc/phpmyadmin/apache.conf`
 
 Then save the file by pressing CTRL + x then Y.
 
 Then restart Apache.
 
-````/etc/init.d/apache2 restart````
+`/etc/init.d/apache2 restart`
 
 ####Setup the database
 
 If you are SSHing in to the Pi you will need to grab its IP address.
 
-````ifconfig````
+`ifconfig`
+
 
 In your computers web browser go to 
 
-````http://raspberrypiIP/phpmyadmin````
+`http://raspberrypiIP/phpmyadmin`
 
 If you are on the Pi using a keyboard open a browser and go to
 
-````localhost/phpmyadmin````
+`localhost/phpmyadmin`
 
 Login in using the credentials you made earlier.
 
@@ -100,33 +101,33 @@ You will need to move the contents of the public folder from the GitHub repo int
 
 Now there are some contrasting reports that in Jessie the folder is in a different location to Wheezy. 
 
-Both should be located in the this general area ````/var/www/```` or ````/var/www/html````
+Both should be located in the this general area `/var/www/` or `/var/www/html`
 
 Move into the webroot directory. For instance:
 
-````cd /var/www/````
+`cd /var/www/`
 <br>or<br>
-````cd /var/www/html````
+`cd /var/www/html`
 
 Now we need to copy the contents across. This assumes you cloned the project from GitHub to your Raspberry Pi's /home/pi folder.
 
-Inside ````/var/www```` do the following command
+Inside `/var/www` do the following command
 
-````sudo cp -r /home/pi/Footfall/Web/* .````
+`sudo cp -r /home/pi/Footfall/Web/* .`
 
 This should bring all of the relevant content across.
 
 To whether this has worked or not.
 
-Open a browser and go to ````http://localhost/events.php```` on the pi or ````RaspberryPiIP/events.php```` on your computer. You should see this screen.
+Open a browser and go to `http://localhost/events.php` on the pi or `RaspberryPiIP/events.php` on your computer. You should see this screen.
 
 ![Footfall Web Page](../images/footfallweb.png)
 
 Awesome we just need to change some variables around.
 
-Open ````sudo nano includes/dbconnect.php````
+Open `sudo nano includes/dbconnect.php`
 
-and change ````$dbname```` and ````$password```` to the ones you created earlier.
+and change `$dbname` and `$password` to the ones you created earlier.
 
 Save and exit.
 
