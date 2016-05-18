@@ -4,6 +4,7 @@
 // * Creation Date: 20-11-2014
 // * Copyright: (c) 2015 by Watershed Arts Trust Ltd.
 
+var hostUrl = "http://localhost/upload.php";
 var trafficData;
 var totalsData;
 var trafficChart;
@@ -48,7 +49,7 @@ function preLoadData()
 {
 	// Get the First Load of Data
 	$.ajax({
-		url:"http://someGetRequest.co.uk/upload.php?get&interval="+interval,
+		url:hostUrl+'?get&interval='+interval,
 		async: true,
 		dataType: 'json',
 		type:'get',
@@ -244,7 +245,7 @@ function updatePeople(data)
 function updateValues()
 {
 	$.ajax({
-		url:"http://someGetRequest.co.uk/upload.php?get&interval"+interval,
+		url:hostUrl+'?get&interval'+interval,
 		async:true,
 		dataType: 'json',
 		type:'get',
