@@ -1,16 +1,18 @@
 ##Footfall
 
 
-#Update 
+#Update 1
+
+
+**I have added some new documentation about how to create the server side system  database etc... There is also a new guide about how to setup the raspberry pi as a server.**
 
 **I will be updating this repo with more detailed instructions and improved tracking over the coming weeks.**
 
----
-**Disclaimer**
+###Warning
 
 The original software was intended for sole use within **[Watershed](http://www.watershed.co.uk)**, therefore some of the source code has been altered for public use and differs slightly to our systems. For example our system generated event tags showing screening in conjunction with the total number of people in Watershed, to do this we had to pre-populate some timestamps and may cause an issue if the system is ran past a certain time.
 
-###Introduction
+#Introduction
 
 Footfall is a camera based people counting system that uses a  Raspberry Pi and Pi Cam. There is more information about the system on our [blog](http://blogs.wcode.org/2015/04/footfall-a-camera-based-people-counting-system-for-under-60/).
 
