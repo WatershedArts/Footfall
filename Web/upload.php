@@ -70,7 +70,7 @@ elseif (isset($_GET['get'])){
 		exit;
 	}
 
-	if ($get->fetchColumn() == 0) {
+	if ($get->rowCount() == 0) {
 		echo "[]";
 		exit;
 	}
