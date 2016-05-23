@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 		// Prepare INSERT QUERY
 		$sqlq = "INSERT INTO `data` (`timestamp`,`locationID`,`event`) VALUES (:rawtimestamp,:location,:count)";
 		$q = $DBH->prepare($sqlq);
-		$q->execute(array(':rawtimestamp' => (substr($rawtimestamp,0,19)), ':count' => $count, ':location' => $location));
+		$q->execute(array(':rawtimestamp' => (substr($rawtimestamp,0,16)) . ":" . (date("s",(substr($rawtimestamp,17,10)))), ':count' => $count, ':location' => $location));
 
 		// Error Handling
 		if (!$q) {
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 			echo "</br>";
 			echo "Location: " . $location;
 			echo "</br>";
-			echo "Raw Timestamp: " . (substr($rawtimestamp,0,19));
+			echo "Raw Timestamp: " . (substr($rawtimestamp,0,16)) . ":" . (date("s",(substr($rawtimestamp,17,10))));
 			exit;
 		}
 }
