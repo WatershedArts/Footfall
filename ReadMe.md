@@ -1,5 +1,9 @@
 ##Footfall
 
+#Update 2
+
+###15/09/16
+**I will updating the project to of_0.9.3 over the next coming weeks this should resolve some of the issues people have been having with ofxCv | ofXML.**
 
 #Update 1
 
