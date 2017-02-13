@@ -1,5 +1,12 @@
 ##Footfall
 
+#Update 3
+
+###13/02/17
+**I will updating the project to of_0.9.8 soon. There will also only be one version of Footfall that should work across all Pi Platforms.
+
+**In the mean time. If you are coming up against compiler errors for ofxCvPiCam and ofxCv, try moving the ofxCvPiCam libs then, download the latest ofxCv repo. If you are using an earlier version oF ie less than 0.9.8. checkout the VS2012-stable branch. If you are using 0.9.8 use the origin/stable branch this will negate the glm:: errors. 
+
 #Update 2
 
 ###15/09/16
