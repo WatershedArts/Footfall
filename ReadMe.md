@@ -1,5 +1,10 @@
 #Footfall
 
+####Update 4
+#####17/02/17
+
+New Version of Footfall. Compatible with Rpi 2 & 3. Added New Readme's. Test footage will be uploaded soon.
+
 ###Warning
 The original software was intended for sole use within **[Watershed](http://www.watershed.co.uk)**, therefore some of the source code has been altered for public use and differs slightly to our systems. For example our system generated event tags showing screening in conjunction with the total number of people in Watershed, to do this we had to pre-populate some timestamps and may cause an issue if the system is ran past a certain time.
 
