@@ -1,4 +1,6 @@
-Copyright (c) 2015, Watershed Arts Trust Ltd.
+###Licence
+
+Copyright (c) 2017, Watershed Arts Trust Ltd.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
