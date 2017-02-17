@@ -1,0 +1,51 @@
+{
+  "Footfall": {
+        "AppConfig": {
+			"usehttp": false,
+			"usecsvlogging": false
+        },
+        "CameraConfig": {
+			"camerawidth":160,
+			"cameraheight":120,
+			"fliphorizontally": false,
+			"flipvertically": false,
+			"trackshadows": true,
+			"threshold": 16,
+			"shadowpixelratio": 0.5,
+			"dilate": 5,
+			"erode": 3,
+			"history": 100,
+			"blur": 5,
+			"usemask": false,
+			"MaskArea":
+			[
+			 {"coordx":0,"coordy":0},
+			 {"coordx":160,"coordy":0},
+			 {"coordx":160,"coordy":120},
+			 {"coordx":0,"coordy":120}
+			]
+		},
+		"TrackingConfig": {
+			"threshold":10,
+			"minarea":10,
+			"maxarea":90,
+			"flipvertically":false,
+			"startposx":0,
+			"startposy":60,
+			"offset":20,
+			"blobdyingtime": 0.50,
+			"persistance":1,
+			"maxdistance":100,
+			"minsizeone": 10,
+			"minsizetwo": 50,
+			"minsizethree": 100
+		},
+		"HttpConfig": {
+			"keepbackups" : false,
+			"postserver":"",
+			"postextension":"",
+			"secretkey":"",
+			"maxretries":1
+		}
+	  }
+}
