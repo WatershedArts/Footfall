@@ -1,29 +1,31 @@
 {
-  "Footfall": {
-        "AppConfig": {
+	"Footfall": {
+		"AppConfig": {
 			"usehttp": false,
 			"usecsvlogging": false
-        },
-        "CameraConfig": {
+		},
+		"CameraConfig": {
 			"camerawidth":160,
 			"cameraheight":120,
 			"fliphorizontally": false,
 			"flipvertically": false,
 			"trackshadows": true,
-			"threshold": 16,
-			"shadowpixelratio": 0.5,
+			"threshold": 200,
+			"mogthreshold": 16,
+			"shadowpixelratio": 0.25,
 			"dilate": 5,
 			"erode": 3,
 			"history": 100,
 			"blur": 5,
 			"usemask": false,
+			"showshadowimage": true,
 			"MaskArea":
 			[
 			 {"coordx":0,"coordy":0},
 			 {"coordx":160,"coordy":0},
 			 {"coordx":160,"coordy":120},
 			 {"coordx":0,"coordy":120}
-			]
+			 ]
 		},
 		"TrackingConfig": {
 			"threshold":10,
@@ -47,5 +49,5 @@
 			"secretkey":"",
 			"maxretries":1
 		}
-	  }
+	}
 }
