@@ -45,22 +45,23 @@ Here are the config options you can alter.
 | "flipvertically"| Flip the Camera View Vertically. | false |
 | "trackshadows"| Decides whether the MOG2 Background Subtractor finds and keeps shadows. | false |
 | "shadowpixelratio" | Sets fTau ratio, i.e how much darker the pixels need to be to be considered a shadow. | 0.5 |
-| "threshold"| The MOG's threshold. | 50 |
+| "mogthreshold"| The MOG's threshold. | 16 |
+| "threshold"| Threshold value for the processed Mog image. | 175 |
 | "dilate" | Dilate the image.  | 5 (should not be more the 10) |
 | "erode" | Erode the image.  | 3 (should not be more the 10) |
 | "history"| How many frames the MOG uses for its model. | 200 |
 | "blur"| Blur Value. | 5 |
 | "usemask"| Flag to tell the app to use a mask on the camera image. This is useful for light sources and other unwanted items in the cameras view. | true |
+| "showshadowimage"| Flag to render the unprocessed MOG image| true |
 | "MaskArea"| Series of coordinates that make a mask. | See Below |
 
 Example Coordinates
 
-```
-{"coordx":10,"coordy":10},
+<pre>{"coordx":10,"coordy":10},
 {"coordx":150,"coordy":10},
 {"coordx":150,"coordy":110},
 {"coordx":10,"coordy":110}
-```
+</pre>
 
 **Tracking Config**
 
