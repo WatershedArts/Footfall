@@ -23,13 +23,17 @@ void ConfigurationManager::loadConfiguration(string file)
 		
 		config.cameraConfig.camerawidth = configFile["Footfall"]["CameraConfig"]["camerawidth"].asInt();
 		config.cameraConfig.cameraheight = configFile["Footfall"]["CameraConfig"]["cameraheight"].asInt();
-		config.cameraConfig.history = configFile["Footfall"]["CameraConfig"]["history"].asInt();
+	
 		config.cameraConfig.dilateAmount = configFile["Footfall"]["CameraConfig"]["dilate"].asInt();
 		config.cameraConfig.erodeAmount = configFile["Footfall"]["CameraConfig"]["erode"].asInt();
+		config.cameraConfig.blur = configFile["Footfall"]["CameraConfig"]["blur"].asInt();
+		config.cameraConfig.threshold = configFile["Footfall"]["CameraConfig"]["threshold"].asInt();
+		
 		config.cameraConfig.mogThreshold = configFile["Footfall"]["CameraConfig"]["mogthreshold"].asInt();
+		config.cameraConfig.history = configFile["Footfall"]["CameraConfig"]["history"].asInt();
 		config.cameraConfig.bTrackShadows = configFile["Footfall"]["CameraConfig"]["trackshadows"].asInt();
 		config.cameraConfig.shadowPixelRatio = configFile["Footfall"]["CameraConfig"]["shadowPixelRatio"].asFloat();
-		config.cameraConfig.blur = configFile["Footfall"]["CameraConfig"]["blur"].asInt();
+		
 		config.cameraConfig.bFlipH = configFile["Footfall"]["CameraConfig"]["fliphorizontally"].asBool();
 		config.cameraConfig.bFlipV = configFile["Footfall"]["CameraConfig"]["flipveritcally"].asBool();
 		config.cameraConfig.bUseMask = configFile["Footfall"]["CameraConfig"]["usemask"].asBool();
@@ -61,6 +65,8 @@ void ConfigurationManager::loadConfiguration(string file)
 		config.trackingConfig.minsizethree = configFile["Footfall"]["TrackingConfig"]["minsizethree"].asInt();
 		config.trackingConfig.maxdistance = configFile["Footfall"]["TrackingConfig"]["maxdistance"].asInt();
 		
+		config.trackingConfig.camerawidth = config.cameraConfig.camerawidth;
+		config.trackingConfig.cameraheight = config.cameraConfig.cameraheight;
 
 		// Post Data Settings
 		config.httpConfig.postserver = configFile["Footfall"]["HttpConfig"]["postserver"].asString();
