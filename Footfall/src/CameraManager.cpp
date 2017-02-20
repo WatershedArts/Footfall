@@ -50,7 +50,7 @@ void CameraManager::setup(Camera_Configuration _cameraConfig)
 	
 #ifdef USE_WEBCAM
 	videoGrabber.setVerbose(true);
-	videoGrabber.setup(320,240);
+	videoGrabber.setup(_cameraConfig.camerawidth, _cameraConfig.cameraheight);
 #endif
 	
 #ifdef USE_PI_CAM
@@ -58,7 +58,8 @@ void CameraManager::setup(Camera_Configuration _cameraConfig)
 	piCamera.setFlips(_cameraConfig.bFlipH,_cameraConfig.bFlipV);
 #endif
 	
-	
+	_threshold = _cameraConfig.threshold;
+	_showShadows = _cameraConfig.bShowShadowImage;
 	_dilateAmount = _cameraConfig.dilateAmount;
 	_erodeAmount = _cameraConfig.erodeAmount;
 	_blur = _cameraConfig.blur;
@@ -107,8 +108,10 @@ void CameraManager::update()
 		// Get the background image
 		pMOG2->getBackgroundImage(background);
 		
-		// Copy the original MOG to the unprocessed Mat before processing
-		// copy(processedMog,unprocessed_MOG); Debug
+		// If you want to see the effect of the shadow ratio threshold. Set the showshadow config to true
+		// Copy the MOG's output before processing the mat
+		
+		if(_showShadows) copy(processedMog,unprocessed_MOG);
 		
 		// Image processing
 		threshold(processedMog,_threshold);
@@ -128,12 +131,21 @@ void CameraManager::draw()
 {
 	ofPushMatrix();
 	ofSetColor(255, 255, 255);
-	drawMat(videoMatrix, 0, 0,320,240);
-	drawMat(processedMog, 320, 0,320,240);
-	drawMat(background, 320*2, 0,320,240);
-	ofDrawBitmapStringHighlight("Input Image", 160-45,255);
-	ofDrawBitmapStringHighlight("Processed Image", (160*3)-65,255);
-	ofDrawBitmapStringHighlight("Background", (160*5)-45,255);
+	drawMat(videoMatrix, 0, 0,videoMatrix.cols,videoMatrix.rows);
+	drawMat(processedMog, videoMatrix.cols, 0,videoMatrix.cols,videoMatrix.rows);
+	ofDrawBitmapStringHighlight("Input Image", (videoMatrix.cols/2)-45,videoMatrix.rows+20);
+	ofDrawBitmapStringHighlight("Processed Image", ((videoMatrix.cols/2)*3)-65,videoMatrix.rows+20);
+	
+	if(_showShadows)
+	{
+		drawMat(unprocessed_MOG, videoMatrix.cols*2, 0,videoMatrix.cols,videoMatrix.rows);
+		ofDrawBitmapStringHighlight("Shadows Image", ((videoMatrix.cols/2)*5)-45,videoMatrix.rows+20);
+	}
+	else
+	{
+		drawMat(background, videoMatrix.cols*2, 0,videoMatrix.cols,videoMatrix.rows);
+		ofDrawBitmapStringHighlight("Background", ((videoMatrix.cols/2)*5)-45,videoMatrix.rows+20);
+	}
 	ofPopMatrix();
 }
 //--------------------------------------------------------------

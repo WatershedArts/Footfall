@@ -61,6 +61,7 @@ class CameraManager
 	
 		vector<cv::Point> _maskPts;
 		bool _useMask;
+		bool _showShadows;
 		int _threshold;
 		int _dilateAmount;
 		int _erodeAmount;
