@@ -11,21 +11,21 @@ struct Camera_Configuration
 {
 	int camerawidth;
 	int cameraheight;
-	
 	int history;
 	int mogThreshold;
+	int threshold;
 	int dilateAmount;
 	int erodeAmount;
 	int blur;
+	
 	float shadowPixelRatio;
 	
 	bool bTrackShadows;
 	bool bFlipH;
 	bool bFlipV;
-	
 	bool bUseMask;
-	vector<ofPoint> maskCoord;
 	
+	vector<ofPoint> maskCoord;
 };
 
 
@@ -45,6 +45,8 @@ struct Tracking_Configuration
 	
 	ofPoint startPos;
 	ofPoint endPos;
+	int camerawidth;
+	int cameraheight;
 	
 	bool flipvertically;
 	int offset;
