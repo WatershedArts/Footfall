@@ -37,6 +37,7 @@ void ConfigurationManager::loadConfiguration(string file)
 		config.cameraConfig.bFlipH = configFile["Footfall"]["CameraConfig"]["fliphorizontally"].asBool();
 		config.cameraConfig.bFlipV = configFile["Footfall"]["CameraConfig"]["flipveritcally"].asBool();
 		config.cameraConfig.bUseMask = configFile["Footfall"]["CameraConfig"]["usemask"].asBool();
+		config.cameraConfig.bShowShadowImage = configFile["Footfall"]["CameraConfig"]["showshadowimage"].asBool();
 
 		vector<ofPoint> pts;
 		int maskSize = configFile["Footfall"]["CameraConfig"]["MaskArea"].size();

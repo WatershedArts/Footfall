@@ -24,6 +24,7 @@ struct Camera_Configuration
 	bool bFlipH;
 	bool bFlipV;
 	bool bUseMask;
+	bool bShowShadowImage;
 	
 	vector<ofPoint> maskCoord;
 };
