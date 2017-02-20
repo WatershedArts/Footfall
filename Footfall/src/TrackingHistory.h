@@ -42,14 +42,39 @@ class TrackingHistory
 		}
 	
 		//--------------------------------------------------------------
-		void draw()
+		void draw(int width,int height)
 		{
 			if(trackingHistory.size() > 15)
 			{
 				trackingHistory.pop_back();
 			}
 			
-			drawGuides();
+			ofPushStyle();
+			ofSetLineWidth(2);
+			// Draw the Centre Line
+			ofSetColor(ofColor::yellow);
+			ofDrawLine(0,_startposy,width,_startposy);
+			
+			// Draw the Centre X
+			ofSetColor(ofColor::yellow);
+			ofDrawLine(width*0.5,_startposy-5,width*0.5,_startposy+5);
+			
+			// Draw Min Size Guide
+			ofSetColor(ofColor::cyan);
+			ofDrawLine((width*0.5)-(_minsize/2),_startposy-10,(width*0.5)-(_minsize/2),_startposy+10);
+			ofDrawLine((width*0.5)+(_minsize/2),_startposy-10,(width*0.5)+(_minsize/2),_startposy+10);
+			
+			// Draw Mid Size Guide
+			ofSetColor(ofColor::purple);
+			ofDrawLine((width*0.5)-(_midsize/2),_startposy-10,(width*0.5)-(_midsize/2),_startposy+10);
+			ofDrawLine((width*0.5)+(_midsize/2),_startposy-10,(width*0.5)+(_midsize/2),_startposy+10);
+			
+			// Draw Max Size Guide
+			ofSetColor(ofColor::limeGreen);
+			ofDrawLine((width*0.5)-(_maxsize/2),_startposy-10,(width*0.5)-(_maxsize/2),_startposy+10);
+			ofDrawLine((width*0.5)+(_maxsize/2),_startposy-10,(width*0.5)+(_maxsize/2),_startposy+10);
+			ofPopStyle();
+			
 			ofPushStyle();
 			ofSetLineWidth(2);
 			for(int i = 0; i < trackingHistory.size(); i++)
@@ -62,37 +87,8 @@ class TrackingHistory
 				{
 					ofSetColor(ofColor::red);
 				}
-				ofDrawLine(160-(trackingHistory[i].size/2),_startposy+(i*5),160+(trackingHistory[i].size/2),_startposy+(i*5));
+				ofDrawLine((width*0.5)-(trackingHistory[i].size/2),_startposy+(i*5),(width*0.5)+(trackingHistory[i].size/2),_startposy+(i*5));
 			}
-			ofPopStyle();
-		}
-		//--------------------------------------------------------------
-		void drawGuides()
-		{
-			ofPushStyle();
-			ofSetLineWidth(2);
-			// Draw the Centre Line
-			ofSetColor(ofColor::yellow);
-			ofDrawLine(0,_startposy,320,_startposy);
-			
-			// Draw the Centre X
-			ofSetColor(ofColor::yellow);
-			ofDrawLine(160,_startposy-5,160,_startposy+5);
-			
-			// Draw Min Size Guide
-			ofSetColor(ofColor::cyan);
-			ofDrawLine(160-(_minsize/2),_startposy-10,160-(_minsize/2),_startposy+10);
-			ofDrawLine(160+(_minsize/2),_startposy-10,160+(_minsize/2),_startposy+10);
-			
-			// Draw Mid Size Guide
-			ofSetColor(ofColor::purple);
-			ofDrawLine(160-(_midsize/2),_startposy-10,160-(_midsize/2),_startposy+10);
-			ofDrawLine(160+(_midsize/2),_startposy-10,160+(_midsize/2),_startposy+10);
-			
-			// Draw Max Size Guide
-			ofSetColor(ofColor::limeGreen);
-			ofDrawLine(160-(_maxsize/2),_startposy-10,160-(_maxsize/2),_startposy+10);
-			ofDrawLine(160+(_maxsize/2),_startposy-10,160+(_maxsize/2),_startposy+10);
 			ofPopStyle();
 		}
 	
