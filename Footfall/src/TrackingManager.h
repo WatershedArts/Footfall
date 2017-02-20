@@ -47,6 +47,8 @@ class TrackingManager
 		int _twoBlob;
 		int _threeBlob;
 		int _historyLength;
+		int _camerawidth;
+		int _cameraheight;
 };
 
 #endif /* TrackingManager_h */

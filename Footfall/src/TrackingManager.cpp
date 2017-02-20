@@ -19,10 +19,12 @@ void TrackingManager::setup(Tracking_Configuration _trackingConfig)
 	_threeBlob = _trackingConfig.minsizethree;
 	_flipVertically = _trackingConfig.flipvertically;
 	_historyLength = _trackingConfig.history;
+	_camerawidth = _trackingConfig.camerawidth;
+	_cameraheight = _trackingConfig.cameraheight;
 	
 	trackingHistory.setup(_oneBlob,_twoBlob,_threeBlob,_trackingConfig.startPos.y);
 	
-	centerRect = ofRectangle(0, _trackingConfig.startPos.y-(_trackingConfig.offset/2), 320, _trackingConfig.offset);
+	centerRect = ofRectangle(0, _trackingConfig.startPos.y-(_trackingConfig.offset/2), _camerawidth, _trackingConfig.offset);
 }
 //--------------------------------------------------------------
 void TrackingManager::update(Mat processedMat)
@@ -152,5 +154,5 @@ void TrackingManager::draw()
 	ofSetColor(255, 255, 255);
 	ofDrawRectangle(centerRect);
 	
-	trackingHistory.draw();
+	trackingHistory.draw(_camerawidth,_cameraheight);
 }
