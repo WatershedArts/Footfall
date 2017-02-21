@@ -12,6 +12,7 @@ repos="orgicus/ofxCvPiCam  \
 kylemcdonald/ofxCv   \
 arturoc/ofxHttpUtils \
 jefftimesten/ofxJSON  \
+paulvollmer/ofxCsv \
 ";
 
 echo "------------------------------";
