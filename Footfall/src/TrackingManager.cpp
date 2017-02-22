@@ -48,18 +48,20 @@ void TrackingManager::update(Mat processedMat)
 				if (blobs[i].getCurrentPosition().y > blobs[i].getOriginPosition().y)
 				{
 					int noOfBlobs = 0;
-					if (blobs[i].getWidth() > _oneBlob)
+					if (blobs[i].getWidth() > _threeBlob)
 					{
-						noOfBlobs = 1;
+						noOfBlobs = 3;
 					}
 					else if (blobs[i].getWidth() > _twoBlob)
 					{
 						noOfBlobs = 2;
 					}
-					else if (blobs[i].getWidth() > _threeBlob)
+					else if (blobs[i].getWidth() > _oneBlob)
 					{
-						noOfBlobs = 3;
+						noOfBlobs = 1;
 					}
+					
+					
 					
 					trackingHistory.addNewData(blobs[i].getWidth(), true);
 					ofNotifyEvent(blobIn, noOfBlobs, this);
@@ -68,17 +70,17 @@ void TrackingManager::update(Mat processedMat)
 				else if (blobs[i].getCurrentPosition().y < blobs[i].getOriginPosition().y)
 				{
 					int noOfBlobs = 0;
-					if (blobs[i].getWidth() > _oneBlob)
+					if (blobs[i].getWidth() > _threeBlob)
 					{
-						noOfBlobs = -1;
+						noOfBlobs = -3;
 					}
 					else if (blobs[i].getWidth() > _twoBlob)
 					{
 						noOfBlobs = -2;
 					}
-					else if (blobs[i].getWidth() > _threeBlob)
+					else if (blobs[i].getWidth() > _oneBlob)
 					{
-						noOfBlobs = -3;
+						noOfBlobs = -1;
 					}
 					
 					trackingHistory.addNewData(blobs[i].getWidth(), false);
@@ -90,17 +92,17 @@ void TrackingManager::update(Mat processedMat)
 				if (blobs[i].getCurrentPosition().y < blobs[i].getOriginPosition().y)
 				{
 					int noOfBlobs = 0;
-					if (blobs[i].getWidth() > _oneBlob)
+					if (blobs[i].getWidth() > _threeBlob)
 					{
-						noOfBlobs = 1;
+						noOfBlobs = 3;
 					}
 					else if (blobs[i].getWidth() > _twoBlob)
 					{
 						noOfBlobs = 2;
 					}
-					else if (blobs[i].getWidth() > _threeBlob)
+					else if (blobs[i].getWidth() > _oneBlob)
 					{
-						noOfBlobs = 3;
+						noOfBlobs = 1;
 					}
 					
 					trackingHistory.addNewData(blobs[i].getWidth(), true);
@@ -110,17 +112,17 @@ void TrackingManager::update(Mat processedMat)
 				else if (blobs[i].getCurrentPosition().y > blobs[i].getOriginPosition().y)
 				{
 					int noOfBlobs = 0;
-					if (blobs[i].getWidth() > _oneBlob)
+					if (blobs[i].getWidth() > _threeBlob)
 					{
-						noOfBlobs = -1;
+						noOfBlobs = -3;
 					}
 					else if (blobs[i].getWidth() > _twoBlob)
 					{
 						noOfBlobs = -2;
 					}
-					else if (blobs[i].getWidth() > _threeBlob)
+					else if (blobs[i].getWidth() > _oneBlob)
 					{
-						noOfBlobs = -3;
+						noOfBlobs = -1;
 					}
 					
 					trackingHistory.addNewData(blobs[i].getWidth(), false);
