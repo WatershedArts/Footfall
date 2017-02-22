@@ -72,7 +72,7 @@ void ofApp::keyReleased(int key)
 //--------------------------------------------------------------
 void ofApp::blobIn(int &val)
 {
-	peopleIn++;
+	peopleIn += val;
 	cout << val << " Blob(s) Came In" << endl;
 	
 	if (_logToServer) httpManager.post(ofToString(val));
@@ -81,7 +81,7 @@ void ofApp::blobIn(int &val)
 //--------------------------------------------------------------
 void ofApp::blobOut(int &val)
 {
-	peopleOut++;
+	peopleOut += abs(val);
 	cout << val << " Blob(s) Went Out" << endl;
 	
 	if (_logToServer) httpManager.post(ofToString(val));
