@@ -48,15 +48,18 @@ void TrackingManager::update(Mat processedMat)
 				if (blobs[i].getCurrentPosition().y > blobs[i].getOriginPosition().y)
 				{
 					int noOfBlobs = 0;
-					if (blobs[i].getWidth() > _threeBlob)
+					int blobWidth = blobs[i].getWidth();
+					if (blobWidth > _threeBlob)
 					{
 						noOfBlobs = 3;
 					}
-					else if (blobs[i].getWidth() > _twoBlob)
+					
+					if ((blobWidth > _twoBlob) && (blobWidth < _threeBlob))
 					{
 						noOfBlobs = 2;
 					}
-					else if (blobs[i].getWidth() > _oneBlob)
+					
+					if ((blobWidth > _oneBlob) && (blobWidth < _twoBlob))
 					{
 						noOfBlobs = 1;
 					}
@@ -70,15 +73,18 @@ void TrackingManager::update(Mat processedMat)
 				else if (blobs[i].getCurrentPosition().y < blobs[i].getOriginPosition().y)
 				{
 					int noOfBlobs = 0;
-					if (blobs[i].getWidth() > _threeBlob)
+					int blobWidth = blobs[i].getWidth();
+					if (blobWidth > _threeBlob)
 					{
 						noOfBlobs = -3;
 					}
-					else if (blobs[i].getWidth() > _twoBlob)
+					
+					if ((blobWidth > _twoBlob) && (blobWidth < _threeBlob))
 					{
 						noOfBlobs = -2;
 					}
-					else if (blobs[i].getWidth() > _oneBlob)
+					
+					if ((blobWidth > _oneBlob) && (blobWidth < _twoBlob))
 					{
 						noOfBlobs = -1;
 					}
@@ -92,15 +98,18 @@ void TrackingManager::update(Mat processedMat)
 				if (blobs[i].getCurrentPosition().y < blobs[i].getOriginPosition().y)
 				{
 					int noOfBlobs = 0;
-					if (blobs[i].getWidth() > _threeBlob)
+					int blobWidth = blobs[i].getWidth();
+					if (blobWidth > _threeBlob)
 					{
 						noOfBlobs = 3;
 					}
-					else if (blobs[i].getWidth() > _twoBlob)
+					
+					if ((blobWidth > _twoBlob) && (blobWidth < _threeBlob))
 					{
 						noOfBlobs = 2;
 					}
-					else if (blobs[i].getWidth() > _oneBlob)
+					
+					if ((blobWidth > _oneBlob) && (blobWidth < _twoBlob))
 					{
 						noOfBlobs = 1;
 					}
@@ -112,15 +121,18 @@ void TrackingManager::update(Mat processedMat)
 				else if (blobs[i].getCurrentPosition().y > blobs[i].getOriginPosition().y)
 				{
 					int noOfBlobs = 0;
-					if (blobs[i].getWidth() > _threeBlob)
+					int blobWidth = blobs[i].getWidth();
+					if (blobWidth > _threeBlob)
 					{
 						noOfBlobs = -3;
 					}
-					else if (blobs[i].getWidth() > _twoBlob)
+					
+					if ((blobWidth > _twoBlob) && (blobWidth < _threeBlob))
 					{
 						noOfBlobs = -2;
 					}
-					else if (blobs[i].getWidth() > _oneBlob)
+					
+					if ((blobWidth > _oneBlob) && (blobWidth < _twoBlob))
 					{
 						noOfBlobs = -1;
 					}
