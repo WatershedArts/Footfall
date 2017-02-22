@@ -2,6 +2,7 @@
 
 This guide assumes that you have compiled openFrameworks and it is in the /home/pi directory.
 
+###Simple Compiling
 First Download the project folder to the apps/ folder.
 
 ``cd openFrameworks/apps/``
@@ -10,9 +11,16 @@ Clone the repo.
 
 `` git clone https://github.com/WatershedArts/Footfall.git``
 
-To eliminate compiling errors, its best to generate a new project folder and transfer the source files across.
+Move into the project folder.
+
+``cd Footfall/Footfall/``
+
+Compile the application.
+
+`` make -j3``
 
 ###Building the App Folder
+If you run into compiling errors, try generating a new project folder and transfer the source files across.
 
 ``cd openFrameworks/apps/myApps/ ``
 
@@ -40,20 +48,6 @@ ofxCvPiCam
 
 To save
 
-We could now try to compile the addons within the app folder. 
-
-``make -j3``
-
-This should compile.
-
-If there are errors with ofxCvPiCam. 
-Enter the addon directory and move the libs folder. 
-
-``mv libs/ old-libs/``
-
-This will hide the libs folder and stop the compilier from using them.
-
-###Moving the Files
 Navigate to the src folder of the Footfall app
 
 ``cd openFrameworks/apps/myApps/Footfall/src``
@@ -76,4 +70,11 @@ Once it has compiled, you'll need to move the config.json file into the data fol
 
 ``cp ../../../../Footfall/Footfall/bin/data/config.json ./bin/data/``
 
+
+If there are errors with ofxCvPiCam. 
+Enter the addon directory and move the libs folder. 
+
+``mv libs/ old-libs/``
+
+This will hide the libs folder and stop the compilier from using them.
 
