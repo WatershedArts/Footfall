@@ -38,7 +38,7 @@ void HTTPManager::setup(HTTP_Configuration _httpConfig)
 	formIn.method = OFX_HTTP_POST;
 	formIn.addFormField("secret", _secretKey);
 	formIn.addFormField("check","1");
-	postUtils.addForm(formIn);
+	postUtils.submitForm(formIn);
 	
 	
 	if (networkOk)
