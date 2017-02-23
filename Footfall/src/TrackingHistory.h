@@ -77,7 +77,6 @@ class TrackingHistory
 			
 			// Draw Size Guides these are in 25pixel increments.
 			int division = width/50;
-			cout << division << endl;
 			for (int i = 0; i < division; i++)
 			{
 				ofSetLineWidth(1);
