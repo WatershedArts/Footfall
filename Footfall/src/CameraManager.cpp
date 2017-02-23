@@ -8,7 +8,7 @@
 //--------------------------------------------------------------
 void CameraManager::setup(Camera_Configuration _cameraConfig)
 {
-	
+	cout << "Setting Up Camera Manager";
 	_useMask = _cameraConfig.bUseMask;
 	
 	// Check whether the mask should be generated
@@ -43,17 +43,20 @@ void CameraManager::setup(Camera_Configuration _cameraConfig)
 	pMOG2->setDouble("fTau", _cameraConfig.shadowPixelRatio);
 	
 #ifdef USE_VIDEO
+	cout << " - Using Video" << endl;
 	videoPlayer.load("yourtestfootage.mov");
 	videoPlayer.setLoopState(OF_LOOP_NORMAL);
 	videoPlayer.play();
 #endif
 	
 #ifdef USE_WEBCAM
+	cout << " - Using Web Camera" << endl;
 	videoGrabber.setVerbose(true);
 	videoGrabber.setup(_cameraConfig.camerawidth, _cameraConfig.cameraheight);
 #endif
 	
 #ifdef USE_PI_CAM
+	cout << " - Using Pi Camera" << endl;
 	piCamera.setup(_cameraConfig.camerawidth,_cameraConfig.cameraheight,true);
 	piCamera.setFlips(_cameraConfig.bFlipH,_cameraConfig.bFlipV);
 #endif

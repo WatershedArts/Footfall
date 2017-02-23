@@ -8,6 +8,7 @@
 //--------------------------------------------------------------
 void HTTPManager::setup(HTTP_Configuration _httpConfig)
 {
+	cout << "Setting Up HTTP Manager" << endl;
 	_postServer = _httpConfig.postserver;
 	_postExtension = _httpConfig.postextension;
 	_secretKey = _httpConfig.secretkey;
@@ -21,6 +22,8 @@ void HTTPManager::setup(HTTP_Configuration _httpConfig)
 	
 	// Just incase there is a network outage
 	backupLogger.setup("backupCSVs");
+		cout << " - Keeping Backup Logs" << endl;
+		cout << " - Not Keeping Backup Logs" << endl;
 	
 	// Check if Server Alive
 	ofxHttpForm formIn;

@@ -13,6 +13,8 @@ void ofApp::setup()
 	ofSetVerticalSync(true);
 	ofSetFrameRate(25);
 	
+	cout << "-------------------- Footfall --------------------" << endl;
+	
 	configManager.loadConfiguration("config.json");
 	
 	_logToCsv = configManager.getConfiguration().useCsvLogging;

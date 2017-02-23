@@ -8,14 +8,15 @@
 //--------------------------------------------------------------
 void ConfigurationManager::loadConfiguration(string file)
 {
+	cout << "Loading Configuration";
 	if (!configFile.open(file))
 	{
-		cout << "Could not find the Configuration File" << endl;
+		cout << " - Could not find the Configuration File!" << endl;
 		return;
 	}
 	else
 	{
-		cout << "Found the Configuration File" << endl;
+		cout << " - Configuration File Found!" << endl
 		
 		// App Settings
 		config.useHttp = configFile["Footfall"]["AppConfig"]["usehttp"].asBool();

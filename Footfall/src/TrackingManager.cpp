@@ -8,6 +8,7 @@
 //--------------------------------------------------------------
 void TrackingManager::setup(Tracking_Configuration _trackingConfig)
 {
+	cout << "Setting Up Tracking Manager" << endl;
 	contourFinder.setMinAreaRadius(_trackingConfig.minarea);
 	contourFinder.setMaxAreaRadius(_trackingConfig.maxarea);
 	contourFinder.setThreshold(_trackingConfig.threshold);

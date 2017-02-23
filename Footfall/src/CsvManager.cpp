@@ -8,16 +8,18 @@
 //--------------------------------------------------------------
 void CsvManager::setup(string saveFolder)
 {
+	cout << "Setting Up CSV Manager";
 	_saveFolder = saveFolder;
 	ofDirectory csvDirectory(ofToDataPath(_saveFolder));
 	
 	if (!csvDirectory.exists())
 	{
 		csvDirectory.createDirectory(_saveFolder);
+		cout << " - Creating " << _saveFolder << " Folder" << endl;
 	}
 	else
 	{
-		cout << _saveFolder << " Already Exists" << endl;
+		cout << " - " << _saveFolder << " Folder Already Exists" << endl;
 	}
 }
 //--------------------------------------------------------------
