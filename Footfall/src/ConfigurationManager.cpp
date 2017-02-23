@@ -75,6 +75,7 @@ void ConfigurationManager::loadConfiguration(string file)
 		config.httpConfig.postextension = configFile["Footfall"]["HttpConfig"]["postextension"].asString();
 		config.httpConfig.secretkey = configFile["Footfall"]["HttpConfig"]["secretkey"].asString();
 		config.httpConfig.maxretries = configFile["Footfall"]["HttpConfig"]["maxretries"].asInt();
+		config.httpConfig.keepbackups = configFile["Footfall"]["HttpConfig"]["keepbackups"].asBool();
 	}
 }
 

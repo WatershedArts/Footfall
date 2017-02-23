@@ -60,6 +60,7 @@ struct HTTP_Configuration
 	string postextension;
 	string secretkey;
 	int maxretries;
+	bool keepbackups;
 };
 
 struct Configuration

@@ -12,6 +12,7 @@ void HTTPManager::setup(HTTP_Configuration _httpConfig)
 	_postServer = _httpConfig.postserver;
 	_postExtension = _httpConfig.postextension;
 	_secretKey = _httpConfig.secretkey;
+	_keepBackups = _httpConfig.keepbackups;
 	
 	haveDeletedCSVs = false;
 	networkOk = false;
@@ -21,9 +22,15 @@ void HTTPManager::setup(HTTP_Configuration _httpConfig)
 	postUtils.start();
 	
 	// Just incase there is a network outage
-	backupLogger.setup("backupCSVs");
+	if (_keepBackups)
+	{
 		cout << " - Keeping Backup Logs" << endl;
+		backupLogger.setup("backupCSVs");
+	}
+	else
+	{
 		cout << " - Not Keeping Backup Logs" << endl;
+	}
 	
 	// Check if Server Alive
 	ofxHttpForm formIn;
