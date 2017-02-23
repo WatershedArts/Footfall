@@ -15,12 +15,20 @@ Move into the project folder.
 
 ``cd Footfall/Footfall/``
 
-Compile the application.
+Compile.
 
 `` make -j3``
 
+Then you are ready to run the app.
+Either:
+
+<pre>DISPLAY=:0 make RunRelease
+of
+DISPLAY=:0 bin/Footfall
+</pre>
+
 ###Building the App Folder
-If you run into compiling errors, try generating a new project folder and transfer the source files across.
+Alternatively, if you run into compiling errors, try generating a new project folder and transfer the source files across.
 
 ``cd openFrameworks/apps/myApps/ ``
 
