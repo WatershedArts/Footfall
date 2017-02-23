@@ -75,6 +75,17 @@ class TrackingHistory
 			ofDrawLine((width*0.5)+(_maxsize/2),_startposy-10,(width*0.5)+(_maxsize/2),_startposy+10);
 			ofPopStyle();
 			
+			// Draw Size Guides these are in 25pixel increments.
+			int division = width/50;
+			cout << division << endl;
+			for (int i = 0; i < division; i++)
+			{
+				ofSetLineWidth(1);
+				ofSetColor(ofColor::white);
+				ofDrawLine((width*0.5)-(((1+i)*50)/2),_startposy-5,(width*0.5)-(((1+i)*50)/2),_startposy+5);
+				ofDrawLine((width*0.5)+(((1+i)*50)/2),_startposy-5,(width*0.5)+(((1+i)*50)/2),_startposy+5);
+			}
+			
 			ofPushStyle();
 			ofSetLineWidth(2);
 			for(int i = 0; i < trackingHistory.size(); i++)
