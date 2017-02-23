@@ -61,26 +61,36 @@ void HTTPManager::close()
 //--------------------------------------------------------------
 void HTTPManager::post(string count)
 {
-	if (ofIsStringInString(count, "0") || ofIsStringInString(count, "-0"))
+	_timestamp = ofGetTimestampString("%Y-%m-%d %H:%M:%S");
+	_count = count;
+	
+	if (networkOk)
 	{
-		// Do nothing
+		if (ofIsStringInString(count, "0") || ofIsStringInString(count, "-0"))
+		{
+			// Do nothing Invalid Number
+		}
+		else
+		{
+			ofxHttpForm formIn;
+			formIn.action = _postServer +"/"+_postExtension;
+			formIn.method = OFX_HTTP_POST;
+			formIn.addFormField("secret", _secretKey);
+			formIn.addFormField("location", "1");
+			formIn.addFormField("count", count);
+			formIn.addFormField("rawtimestamp", _timestamp);
+			formIn.addFormField("submit","1");
+			postUtils.addForm(formIn);
+		}
 	}
 	else
 	{
-		_timestamp = ofGetTimestampString("%Y-%m-%d %H:%M:%S");
-		_count = count;
-		
-		ofxHttpForm formIn;
-		formIn.action = _postServer +"/"+_postExtension;
-		formIn.method = OFX_HTTP_POST;
-		formIn.addFormField("secret", _secretKey);
-		formIn.addFormField("location", "1");
-		formIn.addFormField("count", count);
-		formIn.addFormField("rawtimestamp", _timestamp);
-		formIn.addFormField("submit","1");
-		postUtils.addForm(formIn);
+		if (_keepBackups)
+		{
+			// No Network Start Using Csv
+			backupLogger.addRecord(_count, _timestamp);
+		}
 	}
-
 }
 //--------------------------------------------------------------
 void HTTPManager::postSavedData(string count,string timestamp)
@@ -100,11 +110,7 @@ void HTTPManager::newResponse(ofxHttpResponse &response)
 {
 	string _responseStr = ofToString(response.status) + ":" + (string)response.responseBody;
 	
-	if (ofToString(response.status) == "-1")
-	{
-		backupLogger.addRecord(_count, _timestamp);
-	}
-	else if(ofToString(response.status) == "200")
+	if(ofToString(response.status) == "200")
 	{
 		if ((string)response.responseBody == "OK")
 		{
