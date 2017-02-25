@@ -16,7 +16,7 @@ void ConfigurationManager::loadConfiguration(string file)
 	}
 	else
 	{
-		cout << " - Configuration File Found!" << endl
+		cout << " - Configuration File Found!" << endl;
 		
 		// App Settings
 		config.useHttp = configFile["Footfall"]["AppConfig"]["usehttp"].asBool();
