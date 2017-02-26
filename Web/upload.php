@@ -15,6 +15,11 @@ function sanitise_filename($filename) {
 	return basename(preg_replace("/[^0-9a-z._-]/i", "", $filename));
 }
 
+//------------------------------------------------------------------------------
+// *
+// *	Post Data
+// *
+//------------------------------------------------------------------------------
 if (isset($_POST['submit'])) {
 		// Require Secret Key
 		require_once('includes/secret.php');
@@ -43,6 +48,23 @@ if (isset($_POST['submit'])) {
 			exit;
 		}
 }
+//------------------------------------------------------------------------------
+// *
+// *	Check if the Server is Active
+// *
+//------------------------------------------------------------------------------
+elseif (isset($_POST['check']))
+{
+		require_once('includes/secret.php');
+		echo "Server Connection Good!";
+		exit;
+}
+//------------------------------------------------------------------------------
+// *
+// *	Get Data
+// *
+//------------------------------------------------------------------------------
+
 elseif (isset($_GET['get'])){
 	if (isset($_GET['interval']) && intval($_GET['interval'])) {
 		$interval = intval($_GET['interval']);

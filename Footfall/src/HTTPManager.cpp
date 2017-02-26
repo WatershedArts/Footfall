@@ -109,14 +109,17 @@ void HTTPManager::postSavedData(string count,string timestamp)
 void HTTPManager::newResponse(ofxHttpResponse &response)
 {
 	string _responseStr = ofToString(response.status) + ":" + (string)response.responseBody;
-	
-	if(ofToString(response.status) == "200")
+	if(ofToString(response.status) == "200" && !networkOk)
 	{
-		if ((string)response.responseBody == "OK")
-		{
-			cout << "Server is OK" << endl;
-			networkOk = true;
-		}
+		cout << "Server is OK" << endl;
+		cout << _responseStr << endl;
+		networkOk = true;
+	}
+	else if(ofToString(response.status) == "-1")
+	{
+		cout << "Server is Down" << endl;
+		cout << _responseStr << endl;
+		networkOk = false;
 	}
 }
 //--------------------------------------------------------------
