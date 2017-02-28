@@ -6,9 +6,11 @@ Footfall is a camera based people counting system that uses a Raspberry Pi and P
 
 <center>![Footfall Gif](./images/FootfallGif.gif)</center>
 
-**Important**: The source code provides a barebones system that **will require some** customisation for each installation.
+**Important**: The source code provides a barebones system that **will require** customisation for each installation. 
 
-Built using openFrameworks 0.9.8.
+This means tweaking variables which are explained in the **[Configuration.md](./docs/configuration.md)**.
+
+Built using **openFrameworks 0.9.8**.
 
 ###How to Customise
 Inside the bin/data folder of the Footfall App there is a config.json file. This contains all of the relevant variables you will need to change.
@@ -32,6 +34,10 @@ Thanks to Kyle McDonald for [ofxCv](http://github.com/kylemcdonald/ofxCv) and Ge
 The original software was intended for sole use within **[Watershed](http://www.watershed.co.uk)**, therefore some of the source code has been altered for public use and differs slightly to our systems. For example our system generated event tags showing screening in conjunction with the total number of people in Watershed, to do this we had to pre-populate some timestamps and may cause an issue if the system is ran past a certain time.
 
 ##Fixes
+Will update soon.
+
+
+##Updates
 ####Update 1
 
 I have added some new documentation about how to create the server side system  database etc... There is also a new guide about how to setup the raspberry pi as a server.
