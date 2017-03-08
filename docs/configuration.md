@@ -16,7 +16,8 @@ You'll need to convert the video.
 
 ``ffmpeg -i testRecording.h264 -c copy output.mp4``
 
-On your desktop compile the footfall app. Commenting USE_PI_CAM and uncommenting USE_VIDEO. 
+On your desktop compile the footfall app. Comment USE_PI_CAM out and uncommenting USE_VIDEO.
+This will remove the ofxCvPiCam addon from the build settings. 
 
 Place the converted video into the data directory of the app. Add the videos string to Line 49 of CameraManager.cpp.
 

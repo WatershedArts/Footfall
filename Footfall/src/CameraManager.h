@@ -7,16 +7,18 @@
 #ifndef CameraManager_h
 #define CameraManager_h
 
+//#define USE_VIDEO
+//#define USE_WEBCAM
+#define USE_PI_CAM
+
 #include <stdio.h>
 #include "ofMain.h"
 #include "Configuration.h"
 #include "ofxCv.h"
-#include "ofxCvPiCam.h"
 
-
-//#define USE_VIDEO
-//#define USE_WEBCAM
-#define USE_PI_CAM
+#ifdef USE_PI_CAM
+	#include "ofxCvPiCam.h"
+#endif
 
 using namespace cv;
 using namespace ofxCv;
