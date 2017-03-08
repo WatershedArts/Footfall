@@ -131,6 +131,12 @@ and change `$dbname` and `$password` to the ones you created earlier.
 
 Save and exit.
 
+Open `sudo nano includes/secret.php`
+
+and change $secret = '<A-Secret-Key>'; so that it matches the secretkey variable in your [config.json](https://github.com/WatershedArts/Footfall/blob/master/Footfall/bin/data/config.json) file line 49. Any nonsensicle string will do as long as the two match the HTTP system will work.
+
+Save and exit.
+
 
 ###Option 2 - Dedicated Server
 
