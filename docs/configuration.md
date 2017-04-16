@@ -1,12 +1,12 @@
-##Configuration
+## Configuration
 
 Configuring Footfall is a labour intensive task. Hopefully this guide will make it a little bit easier.
 
-###Positioning Footfall
+### Positioning Footfall
 
 Positioning Footfall is important. Ideally you would deploy it where there are only two directions of entry. For example, over a doorway or above a corridor. You do not want people to cut in from the side of camera. See the example footage given with this app.
 
-###First Steps
+### First Steps
 
 **I would recommend placing your camera above the capture area and recording a minute long video of people passing through.** 
 
@@ -25,7 +25,7 @@ The build and run. Alter the settings until you get the desired actions.
 
 You'll then be able to copy the config file to the RPiVersion.
 
-###Config File
+### Config File
 --
 Here are the config options you can alter.
 
