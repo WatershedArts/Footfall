@@ -1,12 +1,12 @@
-##Configuration
+## Configuration
 
 Configuring Footfall is a labour intensive task. Hopefully this guide will make it a little bit easier.
 
-###Positioning Footfall
+### Positioning Footfall
 
 Positioning Footfall is important. Ideally you would deploy it where there are only two directions of entry. For example, over a doorway or above a corridor. You do not want people to cut in from the side of camera. See the example footage given with this app.
 
-###First Steps
+### First Steps
 
 **I would recommend placing your camera above the capture area and recording a minute long video of people passing through.** 
 
@@ -16,17 +16,17 @@ You'll need to convert the video.
 
 ``ffmpeg -i testRecording.h264 -c copy output.mp4``
 
-On your desktop compile the footfall app. Comment USE_PI_CAM out and uncommenting USE_VIDEO.
+On your desktop compile the footfall app. [Inside CameraManager.h](https://github.com/WatershedArts/Footfall/blob/master/Footfall/src/CameraManager.h#L10-L12) comment USE_PI_CAM out and uncomment USE_VIDEO.
 This will remove the ofxCvPiCam addon from the build settings. 
 
-Place the converted video into the data directory of the app. Add the videos string to Line 49 of CameraManager.cpp.
+Place the converted video into the data directory of the app. Add the videos string [inside CameraManager.cpp](https://github.com/WatershedArts/Footfall/blob/master/Footfall/src/CameraManager.cpp#L47).
 
 The build and run. Alter the settings until you get the desired actions.
 
 You'll then be able to copy the config file to the RPiVersion.
 
-###Config File
---
+### Config File
+
 Here are the config options you can alter.
 
 **App Config**
@@ -93,4 +93,4 @@ Example Coordinates
 |"maxretries"| How many times the post will be sent if failed | 1 
 
 
-*From KyleMcDonald's [Documentation of the ofxCv Tracker Class](https://github.com/kylemcdonald/ofxCv/blob/master/libs/ofxCv/include/ofxCv/Tracker.h#L4)
+* From KyleMcDonald's [Documentation of the ofxCv Tracker Class](https://github.com/kylemcdonald/ofxCv/blob/master/libs/ofxCv/include/ofxCv/Tracker.h#L4)
