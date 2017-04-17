@@ -4,7 +4,10 @@
 
 Footfall is a camera based people counting system that uses a Raspberry Pi and Pi Cam and openFrameworks. There is more information about the system on our [blog](http://blogs.wcode.org/2015/04/footfall-a-camera-based-people-counting-system-for-under-60/).
 
-<center>![Footfall Gif](./images/FootfallGif.gif)</center>
+<p align="center">
+  <img src="./images/FootfallGif.gif">
+</p>
+
 
 **Important**: The source code provides a barebones system that **will require** customisation for each installation. 
 
