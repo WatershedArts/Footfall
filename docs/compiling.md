@@ -1,8 +1,8 @@
-##Compiling
+## Compiling
 
 This guide assumes that you have compiled openFrameworks and it is in the /home/pi directory.
 
-###Simple Compiling
+### Simple Compiling
 First Download the project folder to the apps/ folder.
 
 ``cd openFrameworks/apps/``
@@ -27,7 +27,7 @@ of
 DISPLAY=:0 bin/Footfall
 </pre>
 
-###Building the App Folder
+### Building the App Folder
 Alternatively, if you run into compiling errors, try generating a new project folder and transfer the source files across.
 
 ``cd openFrameworks/apps/myApps/ ``
