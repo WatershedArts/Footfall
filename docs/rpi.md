@@ -1,7 +1,7 @@
-#Raspberry Pi
+# Raspberry Pi
 
 
-###How to setup the Raspberry Pi
+### How to setup the Raspberry Pi
 
 Download a Noobs Package from [here](https://www.raspberrypi.org/downloads/noobs/).
 
