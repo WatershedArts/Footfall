@@ -2,7 +2,7 @@
 
 This guide is tested on RPI 1,2 & 3. 
 
-## Foundation 
+### How to setup the Raspberry Pi
 
 * Download a Noobs Package from [here](https://www.raspberrypi.org/downloads/noobs/).
 * Install Jessie. And wait.
@@ -38,4 +38,7 @@ This will pull down the required packages. Then ensure you have pulled the lates
   
 * Enable Camera by `sudo raspi-config` and Reboot.
 
+Assuming you have [built and compiled oF](http://forum.openframeworks.cc/t/raspberry-pi-2-setup-guide/18690).
+
 * Test the camera is working by ``raspistill -o testimage.jpg``. Open testimage.jpg to check the output. 
+
