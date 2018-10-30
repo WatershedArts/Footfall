@@ -14,10 +14,10 @@ Or if you want to launch the app automatically, use crontab.
 ``crontab -e ``
 
 ```
-00 07	*	*	*	* /home/pi/startFootfall.sh
-59 23	*	*	*	* /home/pi/stopFootfall.sh
+00 07	*	*	*	/home/pi/startFootfall.sh
+59 23	*	*	*	/home/pi/stopFootfall.sh
 
-00	03 *	*	*	* /sbin/reboot
+00	03 *	*	*	/sbin/reboot
 ```
 
 ``CTRL + x`` to save
