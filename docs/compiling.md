@@ -62,7 +62,7 @@ Navigate to the src folder of the Footfall app
 
 Copy all of the Source files into the folder.
 
-``cp ../../../../Footfall/Footfall/src/* .``
+``cp ../../../../aaps/Footfall/Footfall/src/* .``
 
 Now you should be ready to compile.
 
